@@ -1,0 +1,19 @@
+name: Source, unit and loopback HTTP checks
+on: [push, pull_request]
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - run: node scripts/check.mjs
+      - run: python3 scripts/check_python.py
+      - run: node --test tests/node/*.test.ts
+      - run: python3 -m unittest discover -s tests/python -v
+      - run: python3 scripts/benchmark_triage.py
+      # This job does not certify PostgreSQL/API/Podman integration or isolation.
