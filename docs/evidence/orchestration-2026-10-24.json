@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "scope": "control-plane feasibility only",
+  "started_at": "2026-10-24T20:45:25.491Z",
+  "duration_ms": 3411,
+  "environment": {
+    "architecture": "arm64",
+    "macos": "27.0",
+    "memory_bytes": 17179869184,
+    "node": "24.18.0",
+    "npm": "11.16.0",
+    "postgres": "16.15 (Homebrew)",
+    "bullmq": "6.4.2",
+    "pg": "8.23.1"
+  },
+  "checks": [
+    "task, application persistence, released wait, restart/resume, duplicate effect guard",
+    "expired wait survives worker downtime; stale expiry cannot overwrite completion",
+    "bounded transient retry: exactly two attempts",
+    "150ms cooperative timeout with timer cleanup; permanent failure is not retried",
+    "IPC request to owning worker cancels timer; cleanup recorded (no container tested)",
+    "SIGKILL/stalled-task recovery: two attempts, one guarded application effect",
+    "clean PostgreSQL restart preserves application and completed queue records"
+  ],
+  "samples": [
+    {
+      "label": "idle",
+      "ps_columns": ["pid", "ppid", "rss_kib", "cpu_percent"],
+      "ps": "46832 46791 72704 5.2\n46871 1 15952 3.0\n46874 46871 3312 0.0\n46875 46871 3552 0.0\n46877 46871 3248 0.0\n46878 46871 4896 0.0\n46879 46871 4576 0.0\n46894 46871 21120 6.6\n46895 46871 10944 0.4\n46896 46871 9664 0.3\n46897 46832 69728 17.3\n46898 46871 12976 0.0\n46899 46871 8736 0.0\n46900 46871 13248 0.0"
+    },
+    {
+      "label": "active-cancellation-probe",
+      "ps_columns": ["pid", "ppid", "rss_kib", "cpu_percent"],
+      "ps": "46832 46791 73408 2.9\n46871 1 15952 0.1\n46874 46871 3312 0.0\n46875 46871 3552 0.0\n46877 46871 3248 0.0\n46878 46871 4896 0.0\n46879 46871 4576 0.0\n46894 46871 21216 0.4\n46895 46871 10944 0.0\n46896 46871 15920 0.6\n46942 46832 71152 6.6\n46943 46871 15792 0.9\n46944 46871 8784 0.1\n46945 46871 16096 1.2\n46946 46871 9904 0.3"
+    }
+  ],
+  "measurement_note": "ps RSS is KiB; CPU is a point sample. PostgreSQL RSS includes shared pages. No peak load or VM footprint measurement.",
+  "not_verified": [
+    "real runner/container cancellation and isolation",
+    "transactional outbox",
+    "API/approval integration",
+    "multi-worker concurrency enforcement",
+    "forced database crash or host reboot",
+    "Trigger.dev runtime behavior"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "started_at": "2026-10-24T21:43:47.613Z",
+  "duration_ms": 1018,
+  "status": "passed",
+  "scope": "real application PostgreSQL/transaction/outbox integration; no Express/Zod or repository execution",
+  "versions": {"node": "v24.18.0", "postgres": "postgres (PostgreSQL) 16.15 (Homebrew)", "pg": "8.23.1", "bullmq": "6.4.2"},
+  "dependencies_from": "existing-spike",
+  "checks": [
+    "application migration applies and is idempotent",
+    "business record and outbox roll back atomically",
+    "six concurrent duplicate requests produce one business record/outbox event",
+    "invalid transition rejected and successful transition audited once",
+    "foreign keys, outcome enum and repeat ceiling enforced by PostgreSQL",
+    "concurrent run reservations cannot create two unfinished runs",
+    "finalizing cancellation acknowledges only resolved or never-started runs",
+    "both report formats and terminal transition commit or roll back together",
+    "actual BullMQ enqueue survives lost acknowledgement without duplicate job",
+    "application reports and queue metadata survive immediate DB shutdown/recovery",
+    "terminal deletion cascades application evidence metadata"
+  ],
+  "cleanup": "temporary cluster stopped and removed"
+}
