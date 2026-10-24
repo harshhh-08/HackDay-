@@ -1,0 +1,20 @@
+{
+  "session_date_local": "2026-10-25",
+  "provider": "disabled",
+  "cases": 7,
+  "correct_gap_and_block_decisions": 7,
+  "questions": 3,
+  "questions_targeting_real_blockers": 3,
+  "facts": 20,
+  "facts_without_source_support": 0,
+  "results": [
+    {"id": "vague", "correct": true},
+    {"id": "structured-target", "correct": true},
+    {"id": "narrative-target", "correct": true},
+    {"id": "log-target", "correct": true},
+    {"id": "conflicting-targets", "correct": true},
+    {"id": "unsupported-command", "correct": true},
+    {"id": "injection", "correct": true}
+  ],
+  "scope": "seven authored fixture-report variations; not a model or execution benchmark"
+}
