@@ -1,0 +1,16 @@
+{
+  "name": "bugout-orchestration-spike",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=24 <25" },
+  "scripts": {
+    "test": "node run.mjs",
+    "check": "node --check run.mjs && node --check worker.mjs"
+  },
+  "dependencies": {
+    "bullmq": "6.4.2",
+    "pg": "8.23.1"
+  }
+}
