@@ -1,0 +1,11 @@
+*
+!services/
+!services/runner/
+!services/runner/harness.py
+!fixtures/
+!fixtures/checkout/
+!fixtures/checkout/README.md
+!fixtures/checkout/checkout.py
+!fixtures/checkout/pytest.ini
+!fixtures/checkout/tests/
+!fixtures/checkout/tests/test_checkout.py
