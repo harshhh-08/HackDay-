@@ -1,0 +1,9 @@
+[
+  {"input":"token=pretend-secret-value", "output":"[REDACTED]"},
+  {"input":"Authorization: Bearer pretend_token_12345678", "output":"Authorization: [REDACTED]"},
+  {"input":"ghp_012345678901234567890123", "output":"[REDACTED]"},
+  {"input":"postgresql://user:pretend-password@localhost/db", "output":"postgresql://[REDACTED]@localhost/db"},
+  {"input":"-----BEGIN PRIVATE KEY-----\npretend-key-material\n-----END PRIVATE KEY-----", "output":"[REDACTED]"},
+  {"input":"-----BEGIN RSA PRIVATE KEY-----\npretend-truncated-material", "output":"[REDACTED]"},
+  {"input":"AssertionError: expected 2250", "output":"AssertionError: expected 2250"}
+]
