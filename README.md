@@ -2,6 +2,8 @@
 
 **Bugs in. Answers out.**
 
+**Presentation:** [Canva Slide Deck / PPT](https://www.canva.com/design/DAHY-DVr8Dg/7R3uNcBBtWherj9VesIkCQ/edit?ui=e30)
+
 A local-first, API-first debugging investigation engine. It asks for missing
 information, requires approval of an exact experiment, delegates execution to a
 restricted runner, and builds evidence-based JSON and Markdown reports.
@@ -106,7 +108,7 @@ spikes/orchestration/      Earlier isolated feasibility experiment
 
 [Recipient setup and remaining-work guide](SETUP.md) · [API](docs/api.md) · [Architecture](docs/architecture.md)
 · [Security](docs/security.md) · [Verification](docs/verification.md)
-· [Decisions](docs/decisions/README.md) · [Changelog](CHANGELOG.md)
+· [Decisions](docs/decisions/README.md) · [Changelog](CHANGELOG.md) · [Presentation Slides](https://www.canva.com/design/DAHY-DVr8Dg/7R3uNcBBtWherj9VesIkCQ/edit?ui=e30)
 
 Application code: [MIT](LICENSE). Declared core packages: Express 5.3.0, Zod 4.6.7,
 BullMQ 6.4.2 and pg 8.23.1 (MIT). PostgreSQL uses the PostgreSQL License. The image
